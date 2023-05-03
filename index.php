@@ -33,7 +33,9 @@ class Movie {
 }
 
 
-$movie = new Movie("Interstellar", "Sci-fi", "C. Nolan", 2015);
+$movie01 = new Movie("Interstellar", "Adventure Drama Sci-fi", "CHristopher Nolan", 2014);
+$movie02 = new Movie("Old Boy", "Action Drama Mystery", "Park Chan-wook", 2003);
+
 
 
 /*
@@ -42,16 +44,27 @@ $movie->genre = "Sci-fi";
 $movie->director = "C. Nolan";
 */
 
+/*
+$titolo01 = $movie01->title;
+$titolo02 = $movie02->title;
 
-$titolo = $movie->title;
+var_dump($movie01);
+var_dump($movie02);
+var_dump($titolo01);
+var_dump($titolo02);
+*/
 
-var_dump($movie);
-var_dump($titolo);
+echo "Movie 1: <br>";
+echo $movie01->getTitle() . "<br>";
+echo $movie01->getGenre() . "<br>";
+echo $movie01->getDirector() . "<br>";
+echo $movie01->getReleaseYear() . "<br><br>";
 
-echo $movie->getTitle();
-echo $movie->getGenre();
-echo $movie->getDirector();
-echo $movie->getReleaseYear();
+echo "Movie 2: <br>";
+echo $movie02->getTitle() . "<br>";
+echo $movie02->getGenre() . "<br>";
+echo $movie02->getDirector() . "<br>";
+echo $movie02->getReleaseYear() . "<br><br>";
 ?>
 
 
