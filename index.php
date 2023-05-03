@@ -7,6 +7,10 @@ $movie02 = new Movie("Old Boy", new Genre ("Action", "Drama", "Mystery"), "Park 
 $movie03 = new Movie("The Last Samurai", new Genre ("Action", "Drama", "Inspirational"), "Edward Zwick", 2003);
 $movie04 = new Movie("The Curious Case of Benjamin Button", new Genre ("Romance", "Drama", "Fantasy"), "David Fincher", 2008);
 
+
+$movies = [
+    $movie01, $movie02, $movie03, $movie04 
+];
 ?>
 
 <!DOCTYPE html>
@@ -46,15 +50,24 @@ include './Views/partials/header.php'
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td><?= $movie01->getTitle(); ?></td>
-                    <td><?= $movie01->getGenre(); ?></td>
-                    <td><?= $movie01->getDirector(); ?></td>
-                    <td><?= $movie01->getReleaseYear(); ?></td>
-                    <td><?= $movie01->getType(); ?></td>
-                </tr>
-                <tr>
+
+                <?php
+                    foreach($movies as $item){
+                ?>
+                    <tr>
+                        <th scope="row">#</th>
+                        <td><?= $item->getTitle(); ?></td>
+                        <td><?= $item->getGenre(); ?></td>
+                        <td><?= $item->getDirector(); ?></td>
+                        <td><?= $item->getReleaseYear(); ?></td>
+                        <td><?= $item->getType(); ?></td>
+                    </tr>
+
+                <?php    
+                    }
+                ?>
+
+                <!-- <tr>
                     <th scope="row">2</th>
                     <td><?= $movie02->getTitle(); ?></td>
                     <td><?= $movie02->getGenre(); ?></td>
@@ -77,7 +90,7 @@ include './Views/partials/header.php'
                     <td><?= $movie04->getDirector(); ?></td>
                     <td><?= $movie04->getReleaseYear(); ?></td>
                     <td><?= $movie04->getType(); ?></td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
 
