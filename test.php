@@ -1,9 +1,76 @@
-<?php 
-require_once './Models/Genre.php';
-require_once './Models/Movie.php';
+<?php
+
+class Genre {
+    public $subGenre1;
+    public $subGenre2;
+    public $subGenre3;
+
+    function __construct(string $subGenre1, string $subGenre2, string $subGenre3) {
+
+        $this->subGenre1 = $subGenre1;
+        $this->subGenre2 = $subGenre2;
+        $this->subGenre3 = $subGenre3;
+    }
+}
+
+
+class Movie {
+    public $title;
+    public $genre;
+    public $director;
+    public $releaseYear;
+    public static $type = "Movie";
+
+    function __construct(string $title, Genre $genre, string $director, int $releaseYear) {
+
+        $this->title = $title;
+        $this->genre = $genre;
+        $this->director = $director;
+        $this->releaseYear = $releaseYear;
+    }
+
+    public function getType(){
+        return self::$type;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
+
+    public function getGenre() {
+        return $this->genre->subGenre1 . " " . $this->genre->subGenre2 . " " .$this->genre->subGenre3;
+    }
+
+    public function getDirector() {
+        return $this->director;
+    }
+
+    public function getReleaseYear() {
+        return $this->releaseYear;
+    }
+}
+
 
 $movie01 = new Movie("Interstellar", new Genre ("Adventure", "Drama", "Sci-fi"), "CHristopher Nolan", 2014);
 $movie02 = new Movie("Old Boy", new Genre ("Action", "Drama", "Mystery"), "Park Chan-wook", 2003);
+
+
+
+/*
+$movie01->title = "Interstellar";
+$movie01->genre = "Sci-fi";
+$movie01->director = "C. Nolan";
+*/
+
+/*
+$titolo01 = $movie01->title;
+$titolo02 = $movie02->title;
+
+var_dump($movie01);
+var_dump($movie02);
+var_dump($titolo01);
+var_dump($titolo02);
+*/
 
 echo "Movie 1: <br>";
 echo $movie01->getTitle() . "<br>";
@@ -20,6 +87,13 @@ echo $movie02->getDirector() . "<br>";
 echo $movie02->getReleaseYear() . "<br>";
 // echo Movie::$type . "<br><br>";
 echo $movie02->getType() . "<br><br>";
+?>
+
+
+<?php 
+require_once './Models/Genre.php'
+require_once './Models/Movie.php'
+
 ?>
 
 <!DOCTYPE html>
