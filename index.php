@@ -21,6 +21,8 @@ class Movie {
     public $director;
     public $releaseYear;
 
+    public static $type = "Movie";
+
     function __construct(string $title, Genre $genre, string $director, int $releaseYear) {
 
         $this->title = $title;
@@ -72,13 +74,15 @@ echo "Movie 1: <br>";
 echo $movie01->getTitle() . "<br>";
 echo $movie01->getGenre() . "<br>";
 echo $movie01->getDirector() . "<br>";
-echo $movie01->getReleaseYear() . "<br><br>";
+echo $movie01->getReleaseYear() . "<br>";
+echo Movie::$type . "<br><br>";
 
 echo "Movie 2: <br>";
 echo $movie02->getTitle() . "<br>";
 echo $movie02->getGenre() . "<br>";
 echo $movie02->getDirector() . "<br>";
-echo $movie02->getReleaseYear() . "<br><br>";
+echo $movie02->getReleaseYear() . "<br>";
+echo Movie::$type . "<br><br>";
 ?>
 
 
