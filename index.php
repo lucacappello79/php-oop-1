@@ -6,27 +6,52 @@ class Movie {
     public $releaseYear;
 
 
+
     function __construct(string $title, string $genre, string $director, int $releaseYear) {
 
         $this->title = $title;
         $this->genre = $genre;
         $this->director = $director;
         $this->releaseYear = $releaseYear;
+    }
 
+    public function getTitle() {
+        return $this->title;
+    }
 
+    public function getGenre() {
+        return $this->genre;
+    }
+
+    public function getDirector() {
+        return $this->director;
+    }
+
+    public function getReleaseYear() {
+        return $this->releaseYear;
     }
 }
 
 
-$interstellar = new Movie("Interstellar", "Sci-fi", "C. Nolan", 2015);
-$interstellar->title = "Interstellar";
-$interstellar->genre = "Sci-fi";
-$interstellar->director = "C. Nolan";
+$movie = new Movie("Interstellar", "Sci-fi", "C. Nolan", 2015);
 
-$titolo = $interstellar->title;
 
-var_dump($interstellar);
+/*
+$movie->title = "Interstellar";
+$movie->genre = "Sci-fi";
+$movie->director = "C. Nolan";
+*/
+
+
+$titolo = $movie->title;
+
+var_dump($movie);
 var_dump($titolo);
+
+echo $movie->getTitle();
+echo $movie->getGenre();
+echo $movie->getDirector();
+echo $movie->getReleaseYear();
 ?>
 
 
