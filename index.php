@@ -10,7 +10,6 @@ class Genre {
         $this->subGenre1 = $subGenre1;
         $this->subGenre2 = $subGenre2;
         $this->subGenre3 = $subGenre3;
-
     }
 }
 
@@ -20,7 +19,6 @@ class Movie {
     public $genre;
     public $director;
     public $releaseYear;
-
     public static $type = "Movie";
 
     function __construct(string $title, Genre $genre, string $director, int $releaseYear) {
@@ -29,6 +27,10 @@ class Movie {
         $this->genre = $genre;
         $this->director = $director;
         $this->releaseYear = $releaseYear;
+    }
+
+    public function getType(){
+        return self::$type;
     }
 
     public function getTitle() {
@@ -75,14 +77,16 @@ echo $movie01->getTitle() . "<br>";
 echo $movie01->getGenre() . "<br>";
 echo $movie01->getDirector() . "<br>";
 echo $movie01->getReleaseYear() . "<br>";
-echo Movie::$type . "<br><br>";
+// echo Movie::$type . "<br><br>";
+echo $movie01->getType() . "<br><br>";
 
 echo "Movie 2: <br>";
 echo $movie02->getTitle() . "<br>";
 echo $movie02->getGenre() . "<br>";
 echo $movie02->getDirector() . "<br>";
 echo $movie02->getReleaseYear() . "<br>";
-echo Movie::$type . "<br><br>";
+// echo Movie::$type . "<br><br>";
+echo $movie02->getType() . "<br><br>";
 ?>
 
 
