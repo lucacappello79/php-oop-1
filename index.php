@@ -1,13 +1,27 @@
-<?php 
+<?php
+
+class Genre {
+    public $subGenre1;
+    public $subGenre2;
+    public $subGenre3;
+
+    function __construct(string $subGenre1, string $subGenre2, string $subGenre3) {
+
+        $this->subGenre1 = $subGenre1;
+        $this->subGenre2 = $subGenre2;
+        $this->subGenre3 = $subGenre3;
+
+    }
+}
+
+
 class Movie {
     public $title;
     public $genre;
     public $director;
     public $releaseYear;
 
-
-
-    function __construct(string $title, string $genre, string $director, int $releaseYear) {
+    function __construct(string $title, Genre $genre, string $director, int $releaseYear) {
 
         $this->title = $title;
         $this->genre = $genre;
@@ -20,7 +34,7 @@ class Movie {
     }
 
     public function getGenre() {
-        return $this->genre;
+        return $this->genre->subGenre1 . " " . $this->genre->subGenre2 . " " .$this->genre->subGenre3;
     }
 
     public function getDirector() {
@@ -33,15 +47,15 @@ class Movie {
 }
 
 
-$movie01 = new Movie("Interstellar", "Adventure Drama Sci-fi", "CHristopher Nolan", 2014);
-$movie02 = new Movie("Old Boy", "Action Drama Mystery", "Park Chan-wook", 2003);
+$movie01 = new Movie("Interstellar", new Genre ("Adventure", "Drama", "Sci-fi"), "CHristopher Nolan", 2014);
+$movie02 = new Movie("Old Boy", new Genre ("Action", "Drama", "Mystery"), "Park Chan-wook", 2003);
 
 
 
 /*
-$movie->title = "Interstellar";
-$movie->genre = "Sci-fi";
-$movie->director = "C. Nolan";
+$movie01->title = "Interstellar";
+$movie01->genre = "Sci-fi";
+$movie01->director = "C. Nolan";
 */
 
 /*
