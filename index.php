@@ -2,7 +2,7 @@
 require_once './Models/Genre.php';
 require_once './Models/Movie.php';
 
-$movie01 = new Movie("Interstellar", new Genre ("Adventure", "Drama", "SciFi"), "CHristopher Nolan", 2014);
+$movie01 = new Movie("Interstellar", new Genre ("Adventure", "Drama", "SciFi"), "Christopher Nolan", 2014);
 $movie02 = new Movie("Old Boy", new Genre ("Action", "Drama", "Mystery"), "Park Chan-wook", 2003);
 $movie03 = new Movie("The Last Samurai", new Genre ("Action", "Drama", "Inspirational"), "Edward Zwick", 2003);
 $movie04 = new Movie("The Curious Case of Benjamin Button", new Genre ("Romance", "Drama", "Fantasy"), "David Fincher", 2008);
@@ -25,30 +25,15 @@ $movie04 = new Movie("The Curious Case of Benjamin Button", new Genre ("Romance"
 
 
 <body>
+
+<?php 
+include './Views/partials/header.php'
+?>
+
     <div class="container mt-5">
 
-
-        <!-- <div class="row">
-            <div class="col">
-                <h2>Movie 1:</h2>
-                <p>Title: <?= $movie01->getTitle(); ?></p>
-                <p>Genre: <?= $movie01->getGenre(); ?></p>
-                <p>Director: <?= $movie01->getDirector(); ?></p>
-                <p>Release Year: <?= $movie01->getReleaseYear(); ?></p>
-                <p>Type: <?= $movie01->getType(); ?></p>
-            </div>
-
-            <div class="col">
-                <h2>Movie 2:</h2>
-                <p>Title: <?= $movie02->getTitle(); ?></p>
-                <p>Genre: <?= $movie02->getGenre(); ?></p>
-                <p>Director: <?= $movie02->getDirector(); ?></p>
-                <p>Release Year: <?= $movie02->getReleaseYear(); ?></p>
-                <p>Type: <?= $movie02->getType(); ?></p>
-            </div>
-        </div> -->
-
         <h2>Movies</h2>
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -97,6 +82,10 @@ $movie04 = new Movie("The Curious Case of Benjamin Button", new Genre ("Romance"
         </table>
 
 
+
+        <?php
+        include './Views/partials/footer.php'
+        ?>
 
     </div>
 
