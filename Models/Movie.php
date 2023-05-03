@@ -24,7 +24,7 @@ class Movie {
     }
 
     public function getGenre() {
-        return $this->genre->subGenre1 . " " . $this->genre->subGenre2 . " " .$this->genre->subGenre3;
+        return $this->genre->subGenre1 . " - " . $this->genre->subGenre2 . " - " .$this->genre->subGenre3;
     }
 
     public function getDirector() {
